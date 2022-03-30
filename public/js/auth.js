@@ -1,7 +1,7 @@
 const button = document.getElementById("sign_out");
 const url = window.location.hostname.includes("localhost")
   ? "http://localhost:8080/api/auth/"
-  : "https://app-rest-server-dav.herokuapp.com/api/auth/";
+  : "https://sockets-restapi.herokuapp.com/api/auth/";
 const miFormulario = document.querySelector("form");
 const inputCorreo = document.getElementById("correo");
 const inputPassword = document.getElementById("password");
