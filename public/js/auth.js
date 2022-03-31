@@ -6,8 +6,6 @@ const miFormulario = document.querySelector("form");
 const inputCorreo = document.getElementById("correo");
 const inputPassword = document.getElementById("password");
 
-
-
 //code here!!
 miFormulario.addEventListener("submit", (e) => {
   e.preventDefault();
@@ -16,7 +14,6 @@ miFormulario.addEventListener("submit", (e) => {
     password: inputPassword.value,
   };
 
-  console.log(formData);
   fetch(url + "login", {
     method: "POST",
     body: JSON.stringify(formData),
@@ -26,6 +23,7 @@ miFormulario.addEventListener("submit", (e) => {
     .then(({ msg, token }) => {
       if (msg) return console.log(msg);
       localStorage.setItem("token", token);
+      window.location = "chat.html";
     })
     .catch((err) => {
       console.log("Error: " + err);
@@ -55,6 +53,7 @@ function handleCredentialResponse(response) {
 
       localStorage.setItem("email", email);
       localStorage.setItem("token", token);
+      window.location = "chat.html";
     })
     .catch((resp) => {
       console.log("Error: ", resp);

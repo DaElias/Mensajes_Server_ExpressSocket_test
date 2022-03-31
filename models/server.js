@@ -34,7 +34,7 @@ class Server {
   }
 
   socketsEvents() {
-    this.io.on("connection",sokectController);
+    this.io.on("connection", (socket) => sokectController(socket, this.io));
   }
 
   async conectarDB() {
